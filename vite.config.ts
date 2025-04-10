@@ -11,7 +11,7 @@ import react from '@vitejs/plugin-react'
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'https://backend-transporte-inteligente.onrender.com',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       }

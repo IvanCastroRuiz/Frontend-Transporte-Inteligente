@@ -38,14 +38,17 @@ export default function App() {
     }
 
     try {
-      const res = await axios.get('/routes/optimize', {
+      const apiUrl = import.meta.env.VITE_API_URL || 'https://backend-transporte-inteligente.onrender.com';
+      console.log(apiUrl)
+      const res = await axios.get(`${apiUrl}/routes/optimize`, {
         params: { 
           origin: origin.trim(),
           destinations: destinationsList.join(',')
         },
       });
       setResult(res.data);
-    } catch {
+    } catch (error) {
+      console.error('Error al optimizar la ruta:', error);
       setError('Error al optimizar la ruta. Por favor intente nuevamente.');
     } finally {
       setLoading(false);

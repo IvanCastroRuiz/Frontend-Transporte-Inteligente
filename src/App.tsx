@@ -38,7 +38,7 @@ export default function App() {
     }
 
     try {
-      const res = await axios.get('/api/routes/optimize', {
+      const res = await axios.get('/routes/optimize', {
         params: { 
           origin: origin.trim(),
           destinations: destinationsList.join(',')

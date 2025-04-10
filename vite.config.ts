@@ -10,7 +10,7 @@ import react from '@vitejs/plugin-react'
   ],
   server: {
     proxy: {
-      '/api': {
+      '/routes': {
         target: 'https://backend-transporte-inteligente.onrender.com',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
